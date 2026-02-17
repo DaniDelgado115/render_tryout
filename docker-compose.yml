@@ -1,0 +1,11 @@
+services:
+  arxiv-mcp:
+    build: .
+    container_name: arxiv_mcp
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./papers:/app/papers
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
